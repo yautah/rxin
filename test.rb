@@ -5,8 +5,8 @@ require 'rxin'
 
 m = Rxin::Entity::Message.new
 puts '-----Text original Message--------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.msg_id = 23343343
 m.msg_type = 'text'
@@ -28,8 +28,8 @@ puts Rxin::Entity::Message.reply('asdfasdf','position response'),"\n"
 
 m = Rxin::Entity::Message.new
 puts 'Image original Message--------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.msg_id = 23343343
 m.msg_type = 'image'
@@ -55,8 +55,8 @@ puts Rxin::Entity::Message.reply('asdfasdf',mm.image),"\n"
 
 m = Rxin::Entity::Message.new
 puts '----- Voice--------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.msg_id = 23343343
 m.msg_type = 'voice'
@@ -76,8 +76,8 @@ puts Rxin::Entity::Message.reply('asdfasdf',vv.voice),"\n"
 
 m = Rxin::Entity::Message.new
 puts '------Video Message--------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.msg_id = 23343343
 m.msg_type = 'video'
@@ -99,8 +99,8 @@ puts Rxin::Entity::Message.reply('asdfasdf',vv.video),"\n"
 m = Rxin::Entity::Message.new
 
 puts '-----Location Message --------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.location_x = 23.134521
 m.location_y = 113.358803
@@ -116,8 +116,8 @@ puts vv.location.location_x, vv.location.location_y
 
 m = Rxin::Entity::Message.new
 puts 'Link Message --------------------------'
-m.to_user = 'hhh'
-m.from_user ='xxxx'
+m.to_user_name = 'hhh'
+m.from_user_name ='xxxx'
 m.create_time = 32423423
 m.title = 'title'
 m.msg_type = 'link'

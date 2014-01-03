@@ -128,8 +128,8 @@ module Rxin
     class Message
       include ROXML
       xml_name 'xml'
-      xml_accessor :to_user        , :from => 'ToUserName'   , :cdata => true
-      xml_accessor :from_user      , :from => 'FromUserName' , :cdata => true
+      xml_accessor :to_user_name   , :from => 'ToUserName'   , :cdata => true
+      xml_accessor :from_user_name , :from => 'FromUserName' , :cdata => true
       xml_accessor :msg_type       , :from => 'MsgType'      , :cdata => true
       xml_accessor :msg_id         , :from => 'MsgId'        , :as => Integer
       xml_accessor :create_time    , :from => 'CreateTime'   , :as => Integer
@@ -188,8 +188,8 @@ module Rxin
       class << self
         def response(to,from,create_time,msg_obj)
           msg = Message.new
-          msg.to_user = to
-          msg.from_user = from
+          msg.to_user_name = to
+          msg.from_user_name = from
           msg.create_time = create_time
 
           case msg_obj
