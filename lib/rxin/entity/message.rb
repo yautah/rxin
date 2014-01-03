@@ -60,16 +60,16 @@ module Rxin
     class Location
       include ROXML
       xml_name 'Location'
-      xml_accessor :latitude  , from: 'Location_X' , as: Float
-      xml_accessor :longitude , from: 'Location_Y' , as: Float
+      xml_accessor :location_x  , from: 'Location_X' , as: Float
+      xml_accessor :location_y , from: 'Location_Y' , as: Float
       xml_accessor :scale     , from: 'Scale'      , cdata: true
       xml_accessor :label     , from: 'Label'      , cdata: true
 
       def initialize(latitude=nil,longitude=nil,scale=nil,label=nil)
-        @latitude  = latitude
-        @longitude = longitude
-        @scale     = scale
-        @label     = label
+        @location_x = latitude
+        @location_y = longitude
+        @scale      = scale
+        @label      = label
       end
     end
 
@@ -153,8 +153,8 @@ module Rxin
       xml_accessor :thumb_media_id , from: 'ThumbMediaId'    , cdata: true
 
       # location message
-      xml_accessor :latitude       , from: 'Location_X'      , as: Float
-      xml_accessor :longitude      , from: 'Location_Y'      , as: Float
+      xml_accessor :location_x       , from: 'Location_X'      , as: Float
+      xml_accessor :location_y      , from: 'Location_Y'      , as: Float
       xml_accessor :scale          , from: 'Scale'           , cdata: true
       xml_accessor :label          , from: 'Label'           , cdata: true
 
@@ -263,7 +263,7 @@ module Rxin
         when 'video'
           self.video = Video.new(media_id, thumb_media_id,title,description)
         when 'location'
-          self.location = Location.new(latitude,longitude,scale,label)
+          self.location = Location.new(location_x,location_y,scale,label)
         when 'link'
           self.link = Link.new(title,description,url)
         end

@@ -102,8 +102,8 @@ puts '-----Location Message --------------------------'
 m.to_user = 'hhh'
 m.from_user ='xxxx'
 m.create_time = 32423423
-m.latitude = 23.134521
-m.longitude = 113.358803
+m.location_x = 23.134521
+m.location_y = 113.358803
 m.scale = 20
 m.msg_type = 'location'
 m.label = '北京科技大学'
@@ -111,7 +111,7 @@ msg = m.to_xml(:encoding => 'UTF-8', :indent => 0, :save_with => 0)
 puts msg
 
 vv = Rxin::Entity::Message.from_xml(msg.to_s)
-puts vv.location.latitude, vv.location.longitude
+puts vv.location.location_x, vv.location.location_y
 
 
 m = Rxin::Entity::Message.new
