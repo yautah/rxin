@@ -183,7 +183,7 @@ module Rxin
       xml_accessor :music    , as: Music
       xml_accessor :location , as: Location
       xml_accessor :link     , as: Link
-      xml_accessor :articles , as: [Article]   , in: "Articles" , from: 'Item'
+      xml_accessor :articles , as: [Article]   , in: "Articles" , from: 'item'
 
       class << self
         def response(to,from,create_time,msg_obj)
