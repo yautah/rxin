@@ -25,6 +25,7 @@ module Rxin
     # https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
     # returns: {"access_token":"ACCESS_TOKEN","expires_in":7200}
     def get_access_token
+      result_json = {}
       begin
         res = @conn.get 'token', {grant_type: 'client_credential', appid: @app_id, secret: @app_secret }
         result_json = MultiJson.load(res.body)
@@ -34,6 +35,7 @@ module Rxin
         @access_token = result_json['access_token']
         @expires_at   = Time.now + result_json['expires_in'].to_i-300
       end
+      result_json
     end
 
     #check access_token valid or not
