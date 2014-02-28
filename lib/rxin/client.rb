@@ -33,7 +33,7 @@ module Rxin
         
       else
         @access_token = result_json['access_token']
-        @expires_at   = Time.now + result_json['expires_in'].to_i-300
+        @expires_at   = Time.now + result_json['expires_in'].to_i
       end
       result_json
     end
@@ -50,7 +50,7 @@ module Rxin
     end
 
     def get(url, params={})
-      ensure_token!
+      #ensure_token!
       @conn.get do |req|
         req.url url
         req.params = params
@@ -61,7 +61,7 @@ module Rxin
     end
 
     def post(url,params={},body)
-      ensure_token!
+      #ensure_token!
       @conn.post do |req|
         req.url url
         req.params = params
