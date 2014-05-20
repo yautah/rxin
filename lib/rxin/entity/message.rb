@@ -186,6 +186,15 @@ module Rxin
       xml_accessor :articles , as: [Article]   , in: "Articles" , from: 'item'
 
       class << self
+        def response_custom_service(to,from,create_time)
+          msg = Message.new
+          msg.to_user_name = to
+          msg.from_user_name = from
+          msg.create_time = create_time
+          msg.msg_type = 'transfer_customer_service'
+          return msg
+        end
+
         def response(to,from,create_time,msg_obj)
           msg = Message.new
           msg.to_user_name = to
