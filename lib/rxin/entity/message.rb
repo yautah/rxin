@@ -192,7 +192,7 @@ module Rxin
           msg.from_user_name = from
           msg.create_time = create_time
           msg.msg_type = 'transfer_customer_service'
-          return msg
+          return msg.to_xml
         end
 
         def response(to,from,create_time,msg_obj)
